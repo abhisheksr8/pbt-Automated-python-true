@@ -1,0 +1,149 @@
+name: Automated-python-true-PBT-External
+description: test random description
+version: 0.0.1
+author: abhisheks+e2etests@prophecy.io
+language: python
+buildSystem: ''
+buildSystemDetails:
+  artefactID: automatedpythontruepbtexternal
+  parentArtefactID: abhishekse2etestsprophecyioteam
+  buildSystem: wheel
+  author: null
+  createdAt: '2023-10-20 18:06:22'
+pipelines:
+  pipelines/AutomatedPBT-truepython:
+    name: AutomatedPBT-truepython
+    description: automation workflow
+    author: abhisheks+e2etests@prophecy.io
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2023-10-20 18:07:08'
+    datasets:
+      inputs:
+      - datasets/s3_source_dataset
+      outputs: []
+    subgraphs: []
+    dependencies: {}
+  pipelines/AutomatedPBTNo-truepython:
+    name: AutomatedPBTNo-truepython
+    description: automation workflow
+    author: abhisheks+e2etests@prophecy.io
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2023-10-20 18:12:35'
+    datasets:
+      inputs:
+      - datasets/s3_source_dataset
+      outputs: []
+    subgraphs: []
+    dependencies: {}
+datasets:
+  datasets/s3_source_dataset:
+    name: s3_source_dataset
+    description: ''
+    author: abhisheks+e2etests@prophecy.io
+    createdAt: '2023-10-20 18:09:00'
+    mode: batch
+    physicalDatasets:
+      dev:
+        fabricId: 1
+        datasetType: File
+        description: ''
+        author: abhisheks+e2etests@prophecy.io
+        createdAt: '2023-10-20 18:09:00'
+templates: {}
+jobs:
+  jobs/AutomatedPBT-truepython:
+    name: AutomatedPBT-truepython
+    description: ''
+    fabricUID: 1
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: small
+    scheduleCron: 0 0 0 1/1 * ? 2090
+    timeout: null
+    alerting:
+      emails: abhisheks+e2etests@prophecy.io
+      onStart: true
+      onSuccess: false
+      onFailure: true
+    pipelines:
+    - pipelines/AutomatedPBT-truepython
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: true
+    createdAt: '2023-10-20 18:11:23'
+    author: abhisheks+e2etests@prophecy.io
+  jobs/AutomatedPBTNo-truepython:
+    name: AutomatedPBTNo-truepython
+    description: ''
+    fabricUID: 1
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: small
+    scheduleCron: 0 0 0 1/1 * ? 2090
+    timeout: null
+    alerting:
+      emails: abhisheks+e2etests@prophecy.io
+      onStart: true
+      onSuccess: false
+      onFailure: true
+    pipelines:
+    - pipelines/AutomatedPBTNo-truepython
+    jobClusterMode:
+      clusterMode:
+        Multi: {}
+      clusterId: null
+    enabled: true
+    createdAt: '2023-10-20 18:12:59'
+    author: abhisheks+e2etests@prophecy.io
+gemContainer:
+  languageVersion: '3.10'
+  gemLibsVersion: 1.3.4.0
+  gems: {}
+functions:
+  author: null
+  createdAt: '2023-10-20 18:06:22'
+  udfs: {}
+  udafs: {}
+  expressions: {}
+subgraphs: {}
+sqlModels: {}
+sqlMacros: {}
+sqlSeeds: {}
+sqlSources: {}
+sqlUnreferencedSources: {}
+sqlPipeline: null
+dependencies: '[]'
+projectDependencies:
+  '42':
+    projectUID: 42
+    projectName: ProphecySparkBasicsPython
+    repositoryPath: gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_42.git&subPath=
+    version: 0.0.5
+    isDefault: true
+    author: null
+    createdAt: '2023-10-20 18:06:18'
+  '6':
+    projectUID: 6
+    projectName: python_project
+    repositoryPath: gitUri=http://gitserver:3000/ku6kXQiA_team_3/vtmtYhPP_project_6.git&subPath=
+    version: python_project/1.0
+    isDefault: false
+    author: null
+    createdAt: '2023-10-20 18:06:18'
+  '43':
+    projectUID: 43
+    projectName: ProphecyWarehousePython
+    repositoryPath: gitUri=http://gitserver:3000/9gt3CHHz_team_9/pJIIcs5r_project_43.git&subPath=
+    version: 0.0.2
+    isDefault: true
+    author: null
+    createdAt: '2023-10-20 18:06:18'
+pipelineConfigurations: {}

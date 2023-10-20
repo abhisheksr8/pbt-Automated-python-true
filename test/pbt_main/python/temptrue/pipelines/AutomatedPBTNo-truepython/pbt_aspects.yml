@@ -1,0 +1,4 @@
+version: 1
+configurations:
+- test-instance1
+- default
